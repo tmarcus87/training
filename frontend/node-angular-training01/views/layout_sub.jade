@@ -1,0 +1,10 @@
+extends ./layout
+
+block append script
+	+import('javascripts/page/' + page + '.js')
+
+block content
+	p
+		a(href='/') &lt;&lt; Back
+
+	block content_sub

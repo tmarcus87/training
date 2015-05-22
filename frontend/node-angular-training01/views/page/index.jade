@@ -1,0 +1,14 @@
+extends ../layout
+
+block append setting
+	- disableAngular = true;
+
+block content
+	- paths = paths || [];
+
+	h1 NodeAngularTraining
+
+	ul
+		each p in paths
+			li
+				a(href='#{ p }') #{ p }

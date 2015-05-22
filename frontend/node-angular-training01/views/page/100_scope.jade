@@ -1,0 +1,23 @@
+extends ../layout_sub
+
+block content_sub
+
+	.well(ng-controller='Ctrl100')
+		h2 ScopeTest
+		.well(ng-controller='Ctrl100_0')
+			h3 ParentChild Test
+			p v = {{ v }}
+			p getUpperV() = {{ getUpperV() }}
+			p v2 = {{ v2 }}
+			.well(ng-controller='Ctrl100_0_0')
+				p v = {{ v }}
+				p getUpperV() = {{ getUpperV() }}
+				p v2 = {{ v2 }}
+		.well(ng-controller='Ctrl100_1')
+			h3 Prototype succession test
+			p v = {{ v }}
+			button(type='button', ng-click='inc()') inc()
+			.well(ng-controller='Ctrl100_1_0')
+				p v = {{ v }}
+				button(type='button', ng-click='decr()') decr()
+				button(type='button', ng-click='decrParent()') decrParent()

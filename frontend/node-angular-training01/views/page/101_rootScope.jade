@@ -1,0 +1,29 @@
+extends ../layout_sub
+
+block content_sub
+
+	p message = {{ message }}
+
+	.well(ng-controller='Ctrl101_1')
+		h3 Ctrl101_1
+		input(type='text', ng-model='msg')
+		button(ng-click='setMessage(msg)')
+
+	.well(ng-controller='Ctrl101_1')
+		h3 Ctrl101_1
+		p msg = {{ getMessage() }}
+
+	.well(ng-controller='Ctrl101_2')
+		h3 Ctrl101_2
+		input(ng-model='msg')
+		p msg = {{ msg }}
+
+	.well(ng-controller='Ctrl101_2')
+		h3 Ctrl101_2
+		input(ng-model='msg')
+		p msg = {{ msg }}
+
+	.well(ng-controller='Ctrl101_2')
+		h3 Ctrl101_2
+		p message = {{ message }}
+	

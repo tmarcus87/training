@@ -1,0 +1,45 @@
+doctype html
+html
+	block setting
+		- _useMinified = _useMinified || false;
+		- isFluid = isFluid || false;
+		- hideBackLink = hideBackLink || false;
+		- disableAngular = disableAngular || false;
+
+	block layout_mixins
+		- _included = [];
+
+		mixin import(base, filename, minified, joiner)
+			- joiner = joiner || '';
+			- var path = [base, (filename || '')].join(joiner);
+
+			if minified
+				- var minifiedPath = [base, minified].join(joiner);
+
+			- var p = _useMinified && minifiedPath ? minifiedPath : path;
+
+			if String(p).match(/.js$/)
+				script(type='text/javascript', src='/#{p}')
+
+			if String(p).match(/\.css$/)
+				link(rel='stylesheet', href='/#{p}')
+
+	head
+		title #{ title || 'TrainingApp' }
+		block css
+			+import('stylesheets/style.css')
+			+import('vendors/bootstrap/dist/css/', 'bootstrap.css', 'bootstrap.min.css')
+			+import('vendors/bootstrap/dist/css', null, 'bootstrap.css.map')
+			+import('vendors/angular/', 'angular-csp.css')
+
+		block script
+			+import('vendors/jquery/dist/', 'jquery.js', 'jquery.min.js')
+			+import('vendors/bootstrap/dist/js/', 'bootstrap.js', 'bootstrap.min.js')
+			+import('vendors/angular/', 'angular.js', 'angular.min.js')
+
+		block meta
+
+	body(ng-app=(disableAngular ? void(0) : 'app'))
+		div(class=(isFluid ? 'container-fluid' : 'container'))
+
+			block content
