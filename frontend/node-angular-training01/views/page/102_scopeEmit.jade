@@ -1,0 +1,21 @@
+extends ../layout_sub
+
+block content_sub
+
+	.well(ng-controller='Ctrl102')
+		h3 Ctrl102
+		p upperMessage: {{ upperMessage }}
+
+		.well(ng-controller='Ctrl102_0')
+			h4 Ctrl102_0
+			input(ng-model='inputText')
+			button(ng-click='emitMessage()') emitMessage()
+			button(ng-click='broadcastMessage()') broadcastMessage()
+
+			.well(ng-controller='Ctrl102_0_0')
+				h4 Ctrl102_0_0
+				p lowerMessage1: {{ lowerMessage1 }}
+
+			.well(ng-controller='Ctrl102_0_1')
+				h4 Ctrl102_0_1
+				p lowerMessage2: {{ lowerMessage2 }}

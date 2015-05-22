@@ -6,7 +6,8 @@ router.get('/', function (req, res) {
 	res.locals.paths = [
 		'/100_scope',
 		'/101_rootScope',
-		'/200_directive1'
+		'/102_scopeEmit',
+		'/500_directive1'
 	];
 	res.render('page/index');
 });

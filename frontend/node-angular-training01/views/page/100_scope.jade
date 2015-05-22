@@ -21,3 +21,7 @@ block content_sub
 				p v = {{ v }}
 				button(type='button', ng-click='decr()') decr()
 				button(type='button', ng-click='decrParent()') decrParent()
+		.well(ng-controller='Ctrl100_2 as c100_2')
+			h3 Ctrl100_2 as c100_2
+			p c100_2.value = {{ c100_2.value }}
+			p c100_2.getUpperValue() = {{ c100_2.getUpperValue() }}

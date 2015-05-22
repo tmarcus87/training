@@ -43,6 +43,15 @@
 						}
 					}
 				])
+			.controller('Ctrl100_2',
+				[
+					function () {
+						this.value = 'hoge';
+						this.getUpperValue = function () {
+							return angular.uppercase(this.value);
+						}
+					}
+				])
 			;
 
 })();
